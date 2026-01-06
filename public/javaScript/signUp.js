@@ -3,13 +3,13 @@ loadTask();
 $("#createAccBtn").click(() => {
     emptyInputField()
     $("#loginBox").css({ display: "none" });
-    $("#signUpBox").css({ display: "block" });
+    $("#signUpBox").css({ display: "flex" });
 })
 
 $("#backToLoginBtn").click(() => {
     emptyInputField();
     $("#signUpBox").css({ display: "none" });
-    $("#loginBox").css({ display: "block" });
+    $("#loginBox").css({ display: "flex" });
 })
 
 let oldTitle, oldDec, oldDate, oldPriority, currendSelectedTaskBox;
@@ -57,7 +57,10 @@ async function putData(name, email, password) {
         $(".signUpMessage").css({ display: "block", background: "rgba(20, 218, 152, 0.5)" });
         setTimeout(() => {
             $(".signUpMessage").css({ display: "none" });
-        }, 3000);
+            $("#signUpBox").css({ display: "none" });
+            $("#loginBox").css({ display: "flex" });
+        }, 1800);
+
         emptyInputField();
     } else if (data.message == "User Already Exist") {
         $(".signUpMessage").html("Account Already Exist");
@@ -124,6 +127,12 @@ async function getData(email, password) {
         console.log("Home start");
         window.location.href = "home";
         loadTask();
+    } else if (data.message == "Invalid User Or Password") {
+        $(".loginMessage").css({ display: "flex" })
+        $(".loginMessage").text(data.message)
+        setTimeout(() => {
+            $(".loginMessage").css({ display: "none" });
+        }, 3000);
     }
 }
 

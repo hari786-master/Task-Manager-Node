@@ -58,7 +58,7 @@ header div:last-child {
 .login {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 90%;
     max-width: 1600px;
     min-height: 90vh;
     border-radius: 20px;
@@ -78,7 +78,8 @@ header div:last-child {
 } */
 
 .topDetails {
-    width: 40%;
+    width: 45%;
+    gap: 20px;
     color: white;
     flex-direction: column;
 }
@@ -99,16 +100,20 @@ header div:last-child {
     border-radius: 0px 0px 10px 10px;
     background-color: #f5f7fa;
     flex-direction: column;
-    width: 60%;
+    width: 55%;
     /* height: 70%; */
     align-items: flex-start;
     justify-content: flex-start;
     padding: 30px 50px;
     gap: 20px;
+    align-items: center;
+    /* margin-left: 50px; */
+    justify-content: center;
 }
 
 .inpBox {
-    border: 1px solid #c2c4c9;
+    background-color: #c6ccd185;
+    /* border: 1px solid #c2c4c9; */
     padding: 0px 10px;
     width: 100%;
     border-radius: 7px;
@@ -157,22 +162,17 @@ header div:last-child {
     color: white;
 }
 
-#createAccBtn {
+#createAccBtn,
+#backToLoginBtn {
     color: rgb(65, 65, 242);
     cursor: pointer;
+    margin: 0px;
 }
 
 .signUp {
+    width: 90%;
     display: none;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-#backToLoginBtn {
-    width: 50%;
-    margin: auto;
-    background-color: #d8d8d8;
-    border-radius: 8px;
-    color: #1f2937;
 }
 
 #backToLoginBtn i {
@@ -416,6 +416,8 @@ header div:last-child {
 
 .loginMessage,
 .amountMessge {
+    justify-content: center;
+    text-align: center;
     color: #ef4444;
     background: rgba(239, 68, 68, 0.1);
     border: 1px solid #ef4444;
