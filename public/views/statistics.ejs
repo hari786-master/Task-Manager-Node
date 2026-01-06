@@ -1,0 +1,96 @@
+<%- include('../partials/header') %>
+
+    <div class="statisticContainer">
+        <main class="flex">
+            <div class="flex pos" ">
+                <div class=" notebook-card ">
+                    <div class=" flex boxHead ">
+                        <h2>Total Tasks</h2>
+                        <div class=" colorBox flex " style=" background-color: #4a6bdf; ">
+                            <i class=" fas fa-tasks "></i>
+                        </div>
+                    </div>
+                    <div class=" totalTaskCount flex countDesign ">
+                        9
+                    </div>
+                    <!-- <div class=" progressContainer ">
+                    <div class=" taskProgressBar "></div>
+                </div> -->
+                </div>
+
+                <div class=" notebook-card ">
+                    <div class=" flex boxHead ">
+                        <h2>Completed</h2>
+                        <div class=" colorBox flex " style=" background-color: #2ecc71; ">
+                            <i class=" fas fa-check-circle "></i>
+                        </div>
+                    </div>
+                    <div class=" completedTaskCount flex countDesign ">
+                        3
+                    </div>
+                    <div class=" progressContainer ">
+                        <div class=" completedProgressBar "></div>
+                    </div>
+                </div>
+
+                <div class=" notebook-card ">
+                    <div class=" flex boxHead ">
+                        <h2>Pending</h2>
+                        <div class=" colorBox flex " style=" background-color: #f39c12; ">
+                            <i class=" fas fa-clock "></i>
+                        </div>
+                    </div>
+                    <div class=" pendingTaskCount flex countDesign ">
+                        2
+                    </div>
+                    <div class=" progressContainer ">
+                        <div class=" pendingProgressBar "></div>
+                    </div>
+                </div>
+            </div>
+            <div class=" pos ">
+                <div class=" notebook-card barChart ">
+                    <canvas class=" barChartDiagram "></canvas>
+                </div>
+            </div>
+
+            <div class=" flex pos ">
+                <div class=" notebook-card priorityBox ">
+                    <div class=" flex priorityItem ">
+                        <div class=" flex " style=" gap: 10px; ">
+                            <i class=" fas fa-exclamation-circle " style=" color: #e74c3c; font-size: 28px; "></i>
+                            <h4>High Priority</h4>
+                        </div>
+                        <div class=" progressContainer ">
+                            <div class=" highPriorityCount "></div>
+                        </div>
+                        <h4 class=" highTaskCount " style=" font-size: 24px; ">5</h4>
+                    </div>
+                    <div class=" flex priorityItem ">
+                        <div class=" flex " style=" gap: 10px; ">
+                            <i class=" fas fa-minus-circle " style=" color: #f39c12;font-size: 28px "></i>
+                            <h4>Medium Priority</h4>
+                        </div>
+                        <div class=" progressContainer ">
+                            <div class=" mediumPriorityCount "></div>
+                        </div>
+                        <h4 class=" mediumTaskCount " style=" font-size: 24px; ">5</h4>
+                    </div>
+                    <div class=" flex priorityItem ">
+                        <div class=" flex " style=" gap: 10px; ">
+                            <i class=" fas fa-check-circle " style=" color: #2ecc71;font-size: 28px "></i>
+                            <h4>Low Priority</h4>
+                        </div>
+                        <div class=" progressContainer ">
+                            <div class=" lowPriorityCount "></div>
+                        </div>
+                        <h4 class=" lowTaskCount " style=" font-size: 24px; ">5</h4>
+                    </div>
+                </div>
+                <div class=" chart-container notebook-card ">
+                    <canvas class=" priorityChart "></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+    <%- include('../partials/footer') %>

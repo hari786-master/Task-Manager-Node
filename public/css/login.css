@@ -1,0 +1,458 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
+    height: 100vh;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+header {
+    background-color: white;
+    padding: 40px 20px;
+    flex-direction: column;
+    width: 75%;
+    margin-top: 1%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #4a6fdc;
+    margin-bottom: 10px;
+}
+
+header div:last-child {
+    color: #718096;
+    font-size: 18px;
+}
+
+
+/* .login {
+    height: 600px;
+    width: 480px;
+    display: block;
+    margin-top: 8%;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+} */
+
+.login {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1600px;
+    min-height: 90vh;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #14b8a6;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+/* .topDetails {
+    border-radius: 10px 10px 0px 0px;
+    background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
+    height: 35%;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+} */
+
+.topDetails {
+    width: 40%;
+    color: white;
+    flex-direction: column;
+}
+
+.circle {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+    font-size: 36px;
+}
+
+.topDetails h2 {
+    font-size: 40px;
+}
+
+.bottomDetails {
+    border-radius: 0px 0px 10px 10px;
+    background-color: #f5f7fa;
+    flex-direction: column;
+    width: 60%;
+    /* height: 70%; */
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px 50px;
+    gap: 20px;
+}
+
+.inpBox {
+    border: 1px solid #c2c4c9;
+    padding: 0px 10px;
+    width: 100%;
+    border-radius: 7px;
+    margin-top: 10px;
+    justify-content: start;
+    gap: 20px;
+}
+
+.inputTag,
+.bottomDetails div select {
+    border: none;
+    outline: none;
+    height: 42px;
+    background-color: transparent;
+    width: 100%;
+}
+
+.bottomDetails label {
+    font-weight: 600;
+    margin-top: 9%;
+}
+
+.bottomDetails div {
+    width: 100%;
+}
+
+.bottomDetails div:last-child {
+    text-align: center;
+}
+
+.inpBox i {
+    color: #6b7280;
+}
+
+.btn {
+    cursor: pointer;
+    background: #14b8a6;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.btn i {
+    color: white;
+}
+
+#createAccBtn {
+    color: rgb(65, 65, 242);
+    cursor: pointer;
+}
+
+.signUp {
+    display: none;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+#backToLoginBtn {
+    width: 50%;
+    margin: auto;
+    background-color: #d8d8d8;
+    border-radius: 8px;
+    color: #1f2937;
+}
+
+#backToLoginBtn i {
+    color: #1f2937;
+    margin-right: 10px;
+}
+
+.dashboard {
+    display: none;
+    margin-top: 2%;
+    width: 75%;
+}
+
+.dashboardTop {
+    justify-content: space-between;
+    padding: 0px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #272c35;
+}
+
+#logoutBtn {
+    background-color: #718096;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+#logoutBtn i {
+    margin-right: 5px;
+}
+
+.dashboardBottom {
+    height: 70vh;
+    margin-top: 3%;
+    align-items: start;
+    gap: 30px;
+}
+
+.accDetailBox {
+    width: 28%;
+    height: fit-content;
+    border-radius: 10px;
+}
+
+.tranctionBox {
+    /* height: 100%; */
+    width: 72%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.accDetailBox .top {
+    color: white;
+    background: linear-gradient(135deg, #1e40af, #6366f1);
+    height: fit-content;
+    padding: 30px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.accDetailBox .bottom {
+    background: white;
+    height: fit-content;
+    border-radius: 0px 0px 10px 10px;
+    padding-bottom: 17px;
+}
+
+#disAccountType {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 20px;
+    border-radius: 9999px;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+#disAccountNumber {
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+#disBalance {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.top div {
+    padding: 10px;
+}
+
+.bottom div {
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.bottom .flex {
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.bottom>div:last-child {
+    border: none;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.bottom>div:first-child {
+    padding-top: 6%;
+}
+
+.flex .key {
+    color: #6b7280;
+}
+
+.bottom .flex div:last-child {
+    font-weight: 550;
+    font-size: 16px;
+    color: #4c5058;
+}
+
+#status {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border-radius: 9999px;
+}
+
+.tranctionBox {
+    padding: 30px;
+}
+
+.tranctionBox h2:first-child i {
+    margin-right: 2%;
+}
+
+.Box {
+    padding: 20px;
+    width: 50%;
+    background-color: #f3f4f6;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.Box>i:first-child {
+    margin: 0px;
+}
+
+.Box>* {
+    margin-top: 20px;
+}
+
+.Box>i,
+.history i {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.deposit>i,
+.history .fa-arrow-down {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.Box .btn {
+    border-radius: 10px;
+}
+
+.btn i {
+    margin-right: 5px;
+}
+
+.withdraw>i,
+.history .fa-arrow-up {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+#recentTransfer {
+    border: 1px solid #f3f4f6;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.history {
+    padding: 10px 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.history .flex {
+    gap: 10px;
+}
+
+.history i {
+    margin: 0px;
+}
+
+.history .flex>div>* {
+    padding: 5px;
+}
+
+.history .flex>div div:last-child {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.plus {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.minus {
+    color: #ef4444;
+}
+
+#recentTransfer {
+    margin-top: 2%;
+}
+
+.message {
+    display: none;
+    line-height: 23px;
+    color: #055339;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid #10b981;
+    text-align: center;
+    background: rgba(20, 218, 152, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    transition: 2s linear;
+}
+
+.loginMessage,
+.amountMessge {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid #ef4444;
+}
+
+.confirmation {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+}
+
+.confirmBox {
+    padding: 50px 100px;
+    border-radius: 20px;
+    background-color: white;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.conPass {
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.conBtn {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+#conCancelBtn {
+    background-color: #4c5058;
+}
+
+#backToLoginBtn {
+    background-color: transparent;
+}

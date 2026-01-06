@@ -1,0 +1,45 @@
+<%- include('../partials/header') %>
+    <!-- <div class="container"> -->
+    <div class="notebook-container flex">
+        <div class="addBtn flex"><i class="fa-solid fa-plus"></i></div>
+        <div id="notification" class="notification flex">
+            <i class="fas fa-exclamation-circle"></i>
+            <span id="notificationText">Please enter a task title</span>
+        </div>
+        <div class="emptyState">
+            <i class="fas fa-clipboard-list"></i>
+            <h3>No active tasks</h3>
+            <p>You have no active tasks</p>
+        </div>
+
+
+        <div id="addTaskModal" class="modal flex">
+            <div class="modal-content">
+                <div class="modal-header flex">
+                    <h3 class="modal-title">Add New Task</h3>
+                    <button class="close-btn">×</button>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="newTaskTitle" class="form-control" placeholder="Task title" required="">
+                </div>
+                <div class="form-group">
+                    <textarea id="newTaskDescription" class="form-control" placeholder="Description (optional)" rows="6" cols="50" style="resize: vertical;"></textarea>
+                </div>
+                <div class="form-group flex">
+                    <input type="date" id="newTaskDueDate" class="form-control ">
+                    <select id="newTaskPriority" class="form-control ">
+                            <option value="low">Low Priority</option>
+                            <option value="medium" selected="">Medium Priority</option>
+                            <option value="high">High Priority</option>
+                        </select>
+                </div>
+                <div class="modal-actions flex">
+                    <button id="createTaskBtn" class="btn-save">
+                            <i class="fas fa-plus"></i> Create Task
+                        </button>
+                    <button class="btn-cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../partials/footer') %>
