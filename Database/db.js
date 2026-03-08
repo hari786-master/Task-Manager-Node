@@ -2,8 +2,8 @@ import mysql from 'mysql2';
 import dotenv from 'dotenv';
 dotenv.config();
 const db = mysql.createConnection({
-    host: "mysql-xxxx.aivencloud.com",
-    port: "12345",
+    host: "mysql-1ac7e40f-hariharasuthan411-8aa0.e.aivencloud.com",
+    port: "18162",
     user: "avnadmin",
     password: process.env.Password,
     database: process.env.DatabaseName,
