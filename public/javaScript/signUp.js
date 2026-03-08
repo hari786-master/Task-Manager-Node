@@ -1,5 +1,6 @@
-loadTask();
-
+document.addEventListener("DOMContentLoaded", () => {
+    loadTask();
+});
 $("#createAccBtn").click(() => {
     emptyInputField()
     $("#loginBox").css({ display: "none" });
@@ -333,7 +334,7 @@ document.addEventListener("click", function(e) {
         deleteTask(card.querySelector(".notebook-title").innerText.trim());
     }
     let pop = document.querySelector(".pop-up-box");
-    if (e.target.className != "user" && e.target.className != "fas fa-user" && e.target.className != "pop-up-box" && e.target.className != "name" && window.location.href != "http://localhost:3000/") {
+    if (e.target.className != "user" && e.target.className != "fas fa-user" && e.target.className != "pop-up-box" && e.target.className != "name" && window.location.href != "/") {
         pop.style.display = "none";
     }
 
@@ -413,71 +414,62 @@ function emptyInputField() {
     $("textArea").val("");
 }
 
-
 function setStatistic(result) {
-    let pending = 0;
-    let completed = 0;
-    let high = 0;
-    let medium = 0;
-    let low = 0;
-    console.log(result);
-    result.forEach(e => {
-        e.IsCompleted == 0 ? pending++ : completed++;
-        if (e.Priority == "HIGH") high++
-            else if (e.Priority == "MEDIUM") medium++
-                else if (e.Priority == "LOW") low++
+    let pending = 0,
+        completed = 0,
+        high = 0,
+        medium = 0,
+        low = 0;
+
+    result.forEach(task => {
+        task.IsCompleted == 0 ? pending++ : completed++;
+        if (task.Priority === "HIGH") high++;
+        else if (task.Priority === "MEDIUM") medium++;
+        else if (task.Priority === "LOW") low++;
     });
-    const completedPercentage = (completed / result.length) * 100;
-    const pendingPercentage = (pending / result.length) * 100;
-    const highPercentage = (high / result.length) * 100;
-    const mediumPercentage = (medium / result.length) * 100;
-    const lowPercentage = (low / result.length) * 100;
-    $(".completedProgressBar").css({ width: `${completedPercentage}%` })
-    $(".pendingProgressBar").css({ width: `${pendingPercentage}%` })
-    $(".highPriorityCount").css({ width: `${highPercentage}%` })
-    $(".mediumPriorityCount").css({ width: `${mediumPercentage}%` })
-    $(".lowPriorityCount").css({ width: `${lowPercentage}%` })
-    $(".totalTaskCount").text(result.length);
+
+    const total = result.length;
+    $(".completedProgressBar").css({ width: `${(completed/total)*100}%` });
+    $(".pendingProgressBar").css({ width: `${(pending/total)*100}%` });
+    $(".highPriorityCount").css({ width: `${(high/total)*100}%` });
+    $(".mediumPriorityCount").css({ width: `${(medium/total)*100}%` });
+    $(".lowPriorityCount").css({ width: `${(low/total)*100}%` });
+    $(".totalTaskCount").text(total);
     $(".completedTaskCount").text(completed);
     $(".pendingTaskCount").text(pending);
     $(".highTaskCount").text(high);
     $(".mediumTaskCount").text(medium);
     $(".lowTaskCount").text(low);
-    if (window.location.href == "http://localhost:3000/statistics") {
 
-        const bars = $(".barChartDiagram");
-        new Chart(bars, {
+    const barsCanvas = document.querySelector(".barChartDiagram");
+    const doughnutCanvas = document.querySelector(".priorityChart");
+
+    if (barsCanvas) {
+        new Chart(barsCanvas, {
             type: 'bar',
             data: {
                 labels: ['All Tasks', 'Completed', 'Pending'],
                 datasets: [{
-                    data: [result.length, completed, pending],
+                    data: [total, completed, pending],
                     backgroundColor: ['#4a6bdf', '#2ecc71', '#f39c12'],
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false }
-                }
+                plugins: { legend: { display: false } }
             }
         });
+    }
 
-
-        const don = $('.priorityChart');
-
-        new Chart(don, {
+    if (doughnutCanvas) {
+        new Chart(doughnutCanvas, {
             type: 'doughnut',
             data: {
                 labels: ['High Priority', 'Medium Priority', 'Low Priority'],
                 datasets: [{
                     data: [high, medium, low],
-                    backgroundColor: [
-                        '#e74c3c',
-                        '#f39c12',
-                        '#2ecc71'
-                    ],
+                    backgroundColor: ['#e74c3c', '#f39c12', '#2ecc71'],
                     borderWidth: 0
                 }]
             },
@@ -487,19 +479,10 @@ function setStatistic(result) {
                 plugins: {
                     legend: {
                         position: 'bottom',
-                        labels: {
-                            padding: 20,
-                            usePointStyle: true,
-                            font: {
-                                size: 12
-                            }
-                        }
+                        labels: { padding: 20, usePointStyle: true, font: { size: 12 } }
                     }
                 }
             }
         });
-
-
-
     }
 }
