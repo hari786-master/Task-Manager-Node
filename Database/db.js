@@ -2,11 +2,16 @@ import mysql from 'mysql2';
 import dotenv from 'dotenv';
 dotenv.config();
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
+    host: "mysql-xxxx.aivencloud.com",
+    port: "12345",
+    user: "avnadmin",
     password: process.env.Password,
-    database: process.env.DatabaseName
-})
+    database: process.env.DatabaseName,
+    ssl: {
+        rejectUnauthorized: false
+    }
+});
+
 
 db.connect(err => {
     if (err) {
