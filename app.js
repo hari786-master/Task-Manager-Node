@@ -7,6 +7,8 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import jwt from 'jsonwebtoken';
 import validator from 'validator';
+
+
 dotenv.config();
 
 const __fileName = fileURLToPath(
