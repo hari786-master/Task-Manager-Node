@@ -1,45 +1,143 @@
 <%- include('../partials/header') %>
-    <div class="container">
-        <div class="roughContent flex">
-            <div>Organize Your Life with TaskFlow</div>
-            <div>The ultimate task management solution that helps you stay productive, focused, and<br> In control of your daily activities. </div>
-            <a href="/allTasks">
-                <div class="flex">
-                    <p> Start Creating
-                    </p>
-                    <i class="fas fa-rocket"></i>
+    <div class="container hero-container">
+        <!-- Hero Section -->
+        <div class="roughContent flex hero-section">
+            <div class="hero-title">Organize Your Life with TaskFlow</div>
+            <div class="hero-subtitle">The ultimate task management solution that helps you stay productive, focused,
+                and<br> in control of your daily activities.</div>
+            <a href="/allTasks" class="hero-btn-link">
+                <div class="hero-btn flex hover-trigger">
+                    <p>Start Creating</p>
+                    <i class="fas fa-rocket transition-icon"></i>
                 </div>
             </a>
         </div>
+
+        <!-- Features Section -->
         <div class="infoArea flex">
-            <div>
+            <div class="section-heading">
                 <h1>Powerful Features</h1>
                 <p>Everything you need to manage your tasks efficiently and boost your productivity</p>
             </div>
-            <div class="flex">
-                <div class="featureCard">
+            <div class="features-grid flex">
+                <div class="featureCard hover-card">
                     <div class="featureIcon flex">
                         <i class="fas fa-plus-circle"></i>
                     </div>
                     <h3>Easy Task Creation</h3>
-                    <p>Create tasks quickly with our intuitive interface. Add titles, descriptions, due dates, and priority levels in seconds.</p>
+                    <p>Create tasks quickly with our intuitive interface. Add titles, descriptions, due dates, and
+                        priority levels in seconds.</p>
                 </div>
-                <div class="featureCard">
+                <div class="featureCard hover-card">
                     <div class="featureIcon flex">
                         <i class="fas fa-cloud"></i>
                     </div>
                     <h3>Database Storage</h3>
-                    <p>Your tasks are automatically saved to the cloud. Never lose your data and sync across all your devices.
-                    </p>
+                    <p>Your tasks are automatically saved to the cloud. Never lose your data and sync seamlessly across
+                        all your devices.</p>
                 </div>
-                <div class="featureCard">
+                <div class="featureCard hover-card">
                     <div class="featureIcon flex">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Progress Tracking</h3>
-                    <p>Visualize your productivity with detailed statistics and progress indicators. Stay motivated as you complete tasks.</p>
+                    <p>Visualize your productivity with detailed statistics and progress indicators. Stay motivated as
+                        you complete tasks.</p>
                 </div>
             </div>
         </div>
+
+        <!-- How It Works Section -->
+        <div class="how-it-works-section infoArea flex">
+            <div class="section-heading">
+                <h1>How It Works</h1>
+                <p>Get started with TaskFlow in three simple steps</p>
+            </div>
+            <div class="steps-container flex">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Create an Account</h3>
+                    <p>Sign up in seconds to access your personal secure dashboard.</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Add Your Tasks</h3>
+                    <p>Input your daily goals, set priorities, and assign due dates easily.</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Track & Complete</h3>
+                    <p>Monitor your progress visually and celebrate your completed tasks!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Us Section -->
+        <div class="why-choose-section infoArea flex">
+            <div class="section-heading">
+                <h1>Why Choose TaskFlow?</h1>
+                <p>Built for individuals and teams who want to get things done</p>
+            </div>
+            <div class="why-grid flex">
+                <div class="why-card">
+                    <div class="why-icon flex">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div>
+                        <h3>Lightning Fast</h3>
+                        <p>Our optimized platform ensures zero lag between your thoughts and your task list.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon flex">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div>
+                        <h3>Secure & Private</h3>
+                        <p>Your data is encrypted and stored safely. We never share your personal information.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon flex">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Mobile Friendly</h3>
+                        <p>Manage your tasks on the go with our fully responsive design for all devices.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon flex">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <h3>User Centric</h3>
+                        <p>Designed with you in mind. We constantly update based on community feedback.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Banner Section -->
+        <div class="stats-banner flex">
+            <div class="stat-item">
+                <h2 class="stat-number">10k+</h2>
+                <p class="stat-label">Active Users</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="stat-number">5M+</h2>
+                <p class="stat-label">Tasks Completed</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="stat-number">99.9%</h2>
+                <p class="stat-label">Uptime</p>
+            </div>
+        </div>
     </div>
+
+    <!-- Pre-footer spacing -->
+    <div class="pre-footer-gap"></div>
+
     <%- include('../partials/footer') %>

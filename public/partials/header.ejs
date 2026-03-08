@@ -7,7 +7,9 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=League+Spartan:wght@100..900&display=swap"
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/98e2b2ba81.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -19,6 +21,9 @@
         <h1>
             <a href="/home">Task Manager</a>
         </h1>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
         <nav class="nav flex">
             <div class="flex">
                 <i class="fas fa-home"></i>
@@ -35,11 +40,26 @@
             <div class="user" id="userMenuToggle">
                 <i class="fas fa-user"></i>
             </div>
+            <div class="flex mobile-logout logout" style="cursor: pointer;">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </div>
         </nav>
-        </div>
     </header>
 
     <div class="pop-up-box">
         <div class="name">Hello, Hari</div>
         <div class="logout">Logout</div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const nav = document.querySelector('.nav');
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', () => {
+                    nav.classList.toggle('active');
+                });
+            }
+        });
+    </script>
